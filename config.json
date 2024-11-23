@@ -1,0 +1,360 @@
+{
+    "log": {
+        "disabled": false,
+        "level": "error",
+        "output": "./box.log",
+        "timestamp": true
+    },
+    "dns": {
+        "servers": [
+            {
+                "tag": "dns_proxy",
+                "address": "https://1.1.1.1/dns-query",
+                "address_resolver": "dns_resolver",
+                "detour": "国外"
+            },
+            {
+                "tag": "dns_direct",
+                "address": "https://dns.alidns.com/dns-query",
+                "address_resolver": "dns_resolver",
+                "detour": "国内"
+            },
+            {
+                "tag": "dns_resolver",
+                "address": "local",
+                "detour": "direct"
+            },
+            {
+                "tag": "remote",
+                "address": "fakeip"
+            },
+            {
+                "tag": "nxdomain",
+                "address": "rcode://success"
+            }
+        ],
+        "rules": [
+            {
+                "outbound": "any",
+                "server": "dns_resolver"
+            },
+            {
+                "clash_mode": "Direct",
+                "server": "dns_resolver"
+            },
+            {
+                "clash_mode": "Global",
+                "server": "dns_proxy"
+            },
+            {
+                "rule_set": [
+                    "Skip-https",
+                    "Push"
+                ],
+                "server": "dns_resolver"
+            },
+            {
+                "query_type": [
+                    "A",
+                    "AAAA"
+                ],
+                "server": "remote",
+                "rewrite_ttl": 0,
+                "disable_cache": true
+            },
+            {
+                "rule_set": "Direct-domain",
+                "server": "dns_direct"
+            },
+            {
+                "rule_set": [
+                    "geosite-tiktok@!cn",
+                    "Proxy-domain"
+                ],
+                "server": "dns_proxy"
+            },
+            {
+                "rule_set": [
+                    "geosite-cn",
+                    "geosite-bytedance",
+                    "geosite-apple@cn",
+                    "geosite-microsoft@cn",
+                    "geosite-category-games@cn",
+                    "geosite-category-companies@cn"
+                ],
+                "server": "dns_direct"
+            },
+            {
+                "rule_set": "geosite-geolocation-!cn",
+                "server": "dns_proxy"
+            }
+        ],
+        "fakeip": {
+            "enabled": true,
+            "inet4_range": "198.18.0.0/15",
+            "inet6_range": "fc00::/18"
+        },
+        "final": "dns_proxy",
+        "independent_cache": true
+    },
+    "inbounds": [
+        {
+            "type": "tun",
+            "tag": "tun-in",
+            "address": [
+                "172.18.0.1/30",
+                "fdfe:dcba:9876::1/126"
+            ],
+            "strict_route": true,
+            "auto_route": true,
+            "auto_redirect": true,
+            "stack": "system",
+            "sniff": true,
+            "sniff_override_destination": true
+        }
+    ],
+    "outbounds": [
+        {
+            "type": "dns",
+            "tag": "dns"
+        },
+        {
+            "type": "direct",
+            "tag": "direct"
+        },
+        {
+            "type": "block",
+            "tag": "block"
+        },
+        {
+            "type": "selector",
+            "tag": "国外",
+            "outbounds": ""
+        },
+        {
+            "type": "selector",
+            "tag": "国内",
+            "outbounds": [
+                "direct"
+            ]
+        }
+    ],
+    "route": {
+        "rule_set": [
+            {
+                "type": "remote",
+                "tag": "geosite-geolocation-!cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-geolocation-!cn.srs",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "geosite-tiktok@!cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-tiktok@!cn.srs",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "geosite-bytedance",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-bytedance.srs",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "geosite-apple@cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-apple@cn.srs",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "geosite-microsoft@cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-microsoft@cn.srs",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "geosite-category-games@cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-category-games@cn.srs",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "geoip-cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "geosite-cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-cn.srs",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "geosite-category-companies@cn",
+                "format": "binary",
+                "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-category-companies@cn.srs",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "Proxy-domain",
+                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Proxy-domain.json",
+                "format": "source",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "Direct-domain",
+                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Direct-domain.json",
+                "format": "source",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "Push",
+                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Push.json",
+                "format": "source",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "Puship",
+                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Puship.json",
+                "format": "source",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            },
+            {
+                "type": "remote",
+                "tag": "Skip-https",
+                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Skip-https.json",
+                "format": "source",
+                "download_detour": "国外",
+                "update_interval": "24h0m0s"
+            }
+        ],
+        "rules": [
+            {
+                "type": "logical",
+                "mode": "or",
+                "rules": [
+                    {
+                        "protocol": "dns"
+                    },
+                    {
+                        "port": 53
+                    }
+                ],
+                "outbound": "dns"
+            },
+            {
+                "port": 853,
+                "network": "tcp",
+                "outbound": "block"
+            },
+            {
+                "port": 443,
+                "network": "udp",
+                "outbound": "block"
+            },
+            {
+                "clash_mode": "Direct",
+                "outbound": "direct"
+            },
+            {
+                "clash_mode": "Global",
+                "outbound": "国外"
+            },
+            {
+                "rule_set": [
+                    "Skip-https",
+                    "Push"
+                ],
+                "outbound": "direct"
+            },
+            {
+                "rule_set": "Direct-domain",
+                "outbound": "国内"
+            },
+            {
+                "rule_set": [
+                    "geosite-tiktok@!cn",
+                    "Proxy-domain"
+                ],
+                "outbound": "国外"
+            },
+            {
+                "rule_set": [
+                    "geosite-cn",
+                    "geosite-bytedance",
+                    "geosite-apple@cn",
+                    "geosite-microsoft@cn",
+                    "geosite-category-games@cn",
+                    "geosite-category-companies@cn"
+                ],
+                "outbound": "国内"
+            },
+            {
+                "rule_set": "geosite-geolocation-!cn",
+                "outbound": "国外"
+            },
+            {
+                "rule_set": "Puship",
+                "outbound": "direct"
+            },
+            {
+                "rule_set": "geoip-cn",
+                "outbound": "国内"
+            },
+            {
+                "ip_cidr": [
+                    "0.0.0.0/8",
+                    "127.0.0.0/8",
+                    "192.168.0.0/16",
+                    "::/128",
+                    "::1/128",
+                    "fc70::/10",
+                    "fe80::/10"
+                ],
+                "outbound": "direct"
+            },
+            {
+                "ip_is_private": true,
+                "outbound": "direct"
+            }
+        ],
+        "final": "国外",
+        "auto_detect_interface": true
+    },
+    "experimental": {
+        "cache_file": {
+            "enabled": true,
+            "path": "cache.db"
+        },
+        "clash_api": {
+            "external_controller": "127.0.0.1:9090",
+            "external_ui": "ui"
+        }
+    }
+}
