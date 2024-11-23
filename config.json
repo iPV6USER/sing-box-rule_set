@@ -270,16 +270,6 @@
                 "outbound": "dns"
             },
             {
-                "port": 853,
-                "network": "tcp",
-                "outbound": "block"
-            },
-            {
-                "port": 443,
-                "network": "udp",
-                "outbound": "block"
-            },
-            {
                 "clash_mode": "Direct",
                 "outbound": "direct"
             },
