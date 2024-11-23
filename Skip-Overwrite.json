@@ -1,18 +1,18 @@
 {
-  "version": 2,
-  "rules": [
-    {
-      "domain": [
-        "Mijia Cloud",
-        "dlg.io.mi.com"
-      ],
-      "domain_suffix": [
-        ".ess.apple.com",
-        ".i.tplinknbu.com",
-        "wap-gw.tplinkcloud.com",
-        "stun.tplinkcloud.com",
-        ".feishu.cn"
-      ]
-    }
-  ]
+    "version": 2,
+    "rules": [
+        {
+            "domain": [
+                "Mijia Cloud",
+                "dlg.io.mi.com"
+            ],
+            "domain_suffix": [
+                ".ess.apple.com",
+                ".i.tplinknbu.com",
+                "wap-gw.tplinkcloud.com",
+                "stun.tplinkcloud.com",
+                ".feishu.cn"
+            ]
+        }
+    ]
 }
