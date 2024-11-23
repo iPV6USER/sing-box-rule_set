@@ -1,18 +1,21 @@
 {
-  "version": 2,
-  "rules": [
-    {
-      "domain_keyword": [
-        "ntp",
-        "wx.qlogo",
-        "weixin",
-        "wechat",
-        "wxpay",
-        "wxmp",
-        "miniprogram",
-        "tencent",
-        "tenpay"
-      ]
-    }
-  ]
+    "version": 2,
+    "rules": [
+        {
+            "domain_keyword": [
+                "ntp",
+                "wx.qlogo",
+                "weixin",
+                "wechat",
+                "wxpay",
+                "wxmp",
+                "miniprogram",
+                "tencent",
+                "tenpay"
+            ],
+            "domain_suffix": [
+                ".883875.xyz"
+            ]
+        }
+    ]
 }
