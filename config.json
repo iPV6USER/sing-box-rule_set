@@ -9,18 +9,11 @@
         "servers": [
             {
                 "tag": "dns_proxy",
-                "address": "dns.google",
-                "address_resolver": "dns_resolver",
+                "address": "https://1.1.1.1/dns-query",
                 "detour": "国外"
             },
             {
-                "tag": "dns_direct",
-                "address": "dns.alidns.com",
-                "address_resolver": "dns_resolver",
-                "detour": "国内"
-            },
-            {
-                "tag": "dns_resolver",
+                "tag": "dns_local",
                 "address": "local",
                 "detour": "direct"
             },
@@ -36,11 +29,11 @@
         "rules": [
             {
                 "outbound": "any",
-                "server": "dns_resolver"
+                "server": "dns_local"
             },
             {
                 "clash_mode": "Direct",
-                "server": "dns_resolver"
+                "server": "dns_local"
             },
             {
                 "clash_mode": "Global",
@@ -51,7 +44,7 @@
                     "Skip-https",
                     "Push"
                 ],
-                "server": "dns_resolver"
+                "server": "dns_local"
             },
             {
                 "query_type": [
@@ -64,7 +57,7 @@
             },
             {
                 "rule_set": "Direct-domain",
-                "server": "dns_direct"
+                "server": "dns_local"
             },
             {
                 "rule_set": [
@@ -82,7 +75,7 @@
                     "geosite-category-games@cn",
                     "geosite-category-companies@cn"
                 ],
-                "server": "dns_direct"
+                "server": "dns_local"
             },
             {
                 "rule_set": "geosite-geolocation-!cn",
@@ -268,6 +261,16 @@
                     }
                 ],
                 "outbound": "dns"
+            },
+            {
+                "port": 853,
+                "network": "tcp",
+                "outbound": "block"
+            },
+            {
+                "port": 443,
+                "network": "udp",
+                "outbound": "block"
             },
             {
                 "clash_mode": "Direct",
