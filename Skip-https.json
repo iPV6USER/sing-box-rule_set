@@ -5,7 +5,20 @@
             "domain": [
                 "dlg.io.mi.com"
             ],
+            "domain_keyword": [
+                "stun",
+                "ntp",
+                "time"
+            ],
             "domain_suffix": [
+                ".market.xiaomi.com",
+                ".msftncsi.com",
+                ".msftconnecttest.com",
+                ".wotgame.cn",
+                ".wggames.cn",
+                ".wowsgame.cn",
+                ".wargaming.net",
+                ".steamcontent.com",
                 ".ess.apple.com",
                 ".i.tplinknbu.com",
                 "wap-gw.tplinkcloud.com",
