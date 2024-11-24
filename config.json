@@ -141,7 +141,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-geolocation-!cn.srs",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -149,7 +149,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-tiktok@!cn.srs",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -157,7 +157,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-bytedance.srs",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -165,7 +165,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-apple@cn.srs",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -173,7 +173,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-microsoft@cn.srs",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -181,7 +181,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-category-games@cn.srs",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -189,7 +189,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -197,7 +197,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-cn.srs",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -205,7 +205,7 @@
                 "format": "binary",
                 "url": "https://raw.githubusercontent.com/CHIZI-0618/v2ray-rules-dat/release/singbox_rule_set/geosite-category-companies@cn.srs",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -213,7 +213,7 @@
                 "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Proxy-domain.json",
                 "format": "source",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -221,7 +221,7 @@
                 "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Direct-domain.json",
                 "format": "source",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -229,7 +229,7 @@
                 "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Push.json",
                 "format": "source",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -237,7 +237,7 @@
                 "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Puship.json",
                 "format": "source",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             },
             {
                 "type": "remote",
@@ -245,7 +245,7 @@
                 "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Skip-https.json",
                 "format": "source",
                 "download_detour": "国外",
-                "update_interval": "24h0m0s"
+                "update_interval": "24h"
             }
         ],
         "rules": [
