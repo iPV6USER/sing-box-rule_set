@@ -210,7 +210,7 @@
             {
                 "type": "remote",
                 "tag": "Proxy-domain",
-                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Proxy-domain.json",
+                "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Proxy-domain.json",
                 "format": "source",
                 "download_detour": "国外",
                 "update_interval": "24h0m0s"
@@ -218,7 +218,7 @@
             {
                 "type": "remote",
                 "tag": "Direct-domain",
-                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Direct-domain.json",
+                "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Direct-domain.json",
                 "format": "source",
                 "download_detour": "国外",
                 "update_interval": "24h0m0s"
@@ -226,7 +226,7 @@
             {
                 "type": "remote",
                 "tag": "Push",
-                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Push.json",
+                "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Push.json",
                 "format": "source",
                 "download_detour": "国外",
                 "update_interval": "24h0m0s"
@@ -234,7 +234,7 @@
             {
                 "type": "remote",
                 "tag": "Puship",
-                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Puship.json",
+                "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Puship.json",
                 "format": "source",
                 "download_detour": "国外",
                 "update_interval": "24h0m0s"
@@ -242,7 +242,7 @@
             {
                 "type": "remote",
                 "tag": "Skip-https",
-                "url": "https://raw.githubusercontent.com/iPV6USER/sing-box-rule_set/refs/heads/main/Skip-https.json",
+                "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Skip-https.json",
                 "format": "source",
                 "download_detour": "国外",
                 "update_interval": "24h0m0s"
