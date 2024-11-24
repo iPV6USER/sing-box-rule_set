@@ -245,7 +245,7 @@
                 "url": "https://raw.githubusercontent.com/eiaousa/sing-box-rule_set/refs/heads/main/Skip-https.json",
                 "format": "source",
                 "download_detour": "国外",
-                "update_interval": "24h"
+                "update_interval": "12h"
             }
         ],
         "rules": [
